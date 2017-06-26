@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board.repository.BoardMapper">
+	<!--  이 쿼리에 결과물 new Board() -->
+	  <select id="selectBoard" 
+	  		resultType="board.model.Board"
+	  		parameterType="int">
+	  		SELECT
+	  			board_no as boardNo,	
+	  			board_title as boardTitle,
+	  			board_article as boardArticle,
+	  			board_date as boardDate
+	  		FROM board
+	  		WHERE board_no = #{boardNo};
+	  </select>
+</mapper>
